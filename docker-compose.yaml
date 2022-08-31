@@ -1,0 +1,51 @@
+version: '3'
+services:
+    database:
+        image: postgres:alpine
+        ports:
+            - '5432:5432'
+        volumes:
+            - database:/var/lib/postgresql/data
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_DB=postgres
+        restart: always
+
+    cache:
+      image: redis:6.2-alpine
+      restart: always
+      ports:
+        - '6379:6379'
+      command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+      volumes:
+        - cache:/data
+
+    app:
+      build: .
+      hostname: app
+      container_name: app_backend
+      ports:
+        - "80:8080"
+      environment:
+        REDIS_ADDR: "cache:6379"
+        REDIS_PASSWORD: "eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81"
+        REDIS_DB: "0"
+        POSTGRES_USER: "postgres"
+        POSTGRES_PASSWORD: "postgres"
+        POSTGRES_DB: "postgres"
+      volumes:
+        - ap:/app
+      depends_on:
+        - cache
+        - database
+
+volumes:
+  cache:
+    driver: local
+
+  app:
+    driver: local
+
+  database:
+    driver: local
