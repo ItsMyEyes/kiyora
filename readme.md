@@ -1,4 +1,4 @@
-# Gin Web Framework
+# Kiyora
 
 [![GoDoc](https://pkg.go.dev/badge/github.com/gin-gonic/gin?status.svg)](https://pkg.go.dev/github.com/gin-gonic/gin?tab=doc)
 
@@ -6,7 +6,7 @@ Kiyora is a framework written in Go (Golang). It features a martini-like API wit
 
 ## Structure
 
-- [Kiyora Framework](#)
+- [Kiyora](#)
   - [Api](#contents)
   - [Cmd](#cmd)
   - [Configs](#configs)
