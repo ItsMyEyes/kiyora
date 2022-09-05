@@ -1,6 +1,9 @@
 # ❤️ Kiyora ❤️
 
-[![GoDoc](https://pkg.go.dev/badge/github.com/gin-gonic/gin?status.svg)](https://pkg.go.dev/github.com/gin-gonic/gin?tab=doc)
+[![GoDoc](https://pkg.go.dev/badge/github.com/ItsMyEyes/kiyora?status.svg)](https://github.com/ItsMyEyes/kiyora)
+![Versioning](https://img.shields.io/badge/Version-1.0.0-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-blue)
+![Go](https://img.shields.io/badge/Go-1.18-blue)
 
 Kiyora is a framework written in Go (Golang). It features a martini-like API with performance that is up to 40 times faster thanks to [httprouter](https://github.com/julienschmidt/httprouter). If you need performance and good productivity, you will love me.
 
